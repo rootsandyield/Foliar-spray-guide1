@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#17351f" />
+  <title>Roots & Yield Co. | Foliar Spray Guide</title>
+  <style>
+    :root{
+      --green:#17351f;
+      --green2:#244d2f;
+      --green3:#eaf2eb;
+      --gold:#d0aa58;
+      --cream:#f5f2e9;
+      --ink:#1d2520;
+      --muted:#657068;
+      --card:#ffffff;
+      --line:#dfe5df;
+      --good:#2f7441;
+      --watch:#9b721c;
+      --poor:#a24437;
+      --shadow:0 8px 24px rgba(22,45,28,.09);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,#f7f5ef 0,#eef3ee 100%);
+      color:var(--ink);
+    }
+    .wrap{max-width:760px;margin:auto;padding:22px 16px 42px}
+    header{
+      background:var(--green);
+      color:#fff;
+      border-radius:20px;
+      padding:30px 24px 28px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      border-bottom:5px solid var(--gold);
+    }
+    .brand{
+      font-weight:900;
+      letter-spacing:.055em;
+      font-size:clamp(27px,7vw,43px);
+      line-height:1.05;
+      text-transform:uppercase;
+    }
+    .guide{
+      margin-top:8px;
+      color:#f4e6bd;
+      font-size:clamp(22px,5.4vw,32px);
+      font-weight:800;
+    }
+    .tagline{
+      margin:10px auto 0;
+      max-width:560px;
+      color:#e2eadf;
+      font-size:15px;
+      line-height:1.45;
+    }
+    .panel{
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:17px;
+      padding:20px;
+      margin-top:18px;
+    }
+    label{font-weight:800;display:block;margin-bottom:8px;color:var(--green)}
+    .search{display:flex;gap:9px}
+    input{
+      flex:1; min-width:0;
+      font-size:18px;
+      border:1px solid #bfc9c0;
+      border-radius:11px;
+      padding:13px 14px;
+      outline:none;
+    }
+    input:focus{border-color:var(--green2);box-shadow:0 0 0 3px rgba(36,77,47,.12)}
+    button{
+      border:0;border-radius:11px;padding:0 17px;
+      background:var(--green2);color:#fff;font-weight:800;font-size:15px;
+      cursor:pointer;
+    }
+    button:hover{filter:brightness(1.06)}
+    .location{margin-top:10px;color:var(--muted);font-size:14px;min-height:19px}
+    .indexbox{
+      text-align:center;
+      padding:22px 18px 18px;
+      background:linear-gradient(135deg,#17351f,#2f6040);
+      color:white;
+    }
+    .indexlabel{font-weight:900;letter-spacing:.12em;font-size:14px}
+    .indexnum{font-size:60px;font-weight:900;line-height:1;margin:8px 0 5px}
+    .status{
+      display:inline-block;
+      border-radius:999px;
+      padding:7px 13px;
+      background:rgba(255,255,255,.14);
+      font-weight:800;
+    }
+    .indexhint{margin:12px auto 0;max-width:500px;color:#e5eee4;font-size:13px;line-height:1.4}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+    .metric{
+      background:white;border:1px solid var(--line);border-radius:15px;
+      padding:17px 14px;box-shadow:0 5px 16px rgba(22,45,28,.055);
+    }
+    .metric .name{font-size:13px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+    .metric .value{font-size:30px;font-weight:900;color:var(--green);margin-top:5px}
+    .metric .small{font-size:12px;color:var(--muted);margin-top:4px}
+    h2{font-size:21px;margin:0 0 10px;color:var(--green)}
+    .window{line-height:1.5;color:#344139}
+    .window strong{color:var(--green)}
+    .window-card{border-left:5px solid var(--good)}
+    .rain-card{border-left:5px solid #527b9f}
+    .loading{opacity:.6}
+    .error{
+      background:#fff0ed;border:1px solid #efc5bc;color:#85362b;
+      border-radius:11px;padding:12px 14px;margin-top:13px;display:none;
+    }
+    .contact{
+      text-align:center;
+      background:var(--cream);
+      border:1px solid #e6dfcf;
+    }
+    .contact h2{margin-bottom:5px}
+    .dan{font-size:23px;font-weight:900;margin-bottom:13px}
+    .contact-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .contact a{
+      text-decoration:none;background:var(--green2);color:white;font-weight:800;
+      border-radius:10px;padding:11px 17px;display:inline-block;
+    }
+    .contact a.secondary{background:white;color:var(--green2);border:1px solid var(--green2)}
+    footer{
+      margin:22px 7px 0;text-align:center;color:#6e786f;font-size:12px;line-height:1.5;
+    }
+    .credit{font-size:12px;color:#778178;text-align:center;margin-top:16px}
+    @media(max-width:520px){
+      .wrap{padding:12px 10px 30px}
+      header{border-radius:15px;padding:25px 14px 23px}
+      .panel{border-radius:14px;padding:16px}
+      .search{flex-direction:column}
+      button{padding:13px 14px}
+      .grid{gap:9px}
+      .metric{padding:15px 11px}
+      .metric .value{font-size:27px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="brand">Roots &amp; Yield Co.</div>
+      <div class="guide">Foliar Spray Guide</div>
+      <div class="tagline">Next Level Crop Management: Pushing for Higher Yields</div>
+    </header>
+
+    <section class="panel">
+      <label for="zip">Enter ZIP Code</label>
+      <div class="search">
+        <input id="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Example: 52133" />
+        <button id="check">Check Conditions</button>
+      </div>
+      <div id="location" class="location">Enter a U.S. ZIP code to check current foliar conditions.</div>
+      <div id="error" class="error"></div>
+    </section>
+
+    <section class="panel indexbox">
+      <div class="indexlabel">FOLIAR INDEX</div>
+      <div id="index" class="indexnum">--</div>
+      <div id="status" class="status">Check conditions</div>
+      <div class="indexhint">Foliar Index = air temperature (°F) + relative humidity (%). Lower values generally indicate more favorable environmental conditions for foliar applications.</div>
+    </section>
+
+    <section class="grid" aria-label="Current weather">
+      <div class="metric">
+        <div class="name">Temperature</div>
+        <div id="temp" class="value">--°F</div>
+        <div class="small">Current air temperature</div>
+      </div>
+      <div class="metric">
+        <div class="name">Humidity</div>
+        <div id="humidity" class="value">--%</div>
+        <div class="small">Relative humidity</div>
+      </div>
+      <div class="metric">
+        <div class="name">Wind</div>
+        <div id="wind" class="value">-- mph</div>
+        <div class="small">Current wind speed</div>
+      </div>
+      <div class="metric">
+        <div class="name">Rain Chance</div>
+        <div id="rain" class="value">--%</div>
+        <div class="small">Current-hour probability</div>
+      </div>
+    </section>
+
+    <section class="panel window-card">
+      <h2>🌱 Next Foliar Window</h2>
+      <div id="foliarWindow" class="window">Check conditions to find the next favorable spray window.</div>
+    </section>
+
+    <section class="panel rain-card">
+      <h2>🌧 Next Rain Chance</h2>
+      <div id="nextRain" class="window">Check conditions to see the next meaningful rain chance.</div>
+    </section>
+
+    <section class="panel contact">
+      <h2>Questions About Your Foliar Program?</h2>
+      <div class="dan">Dan Phillips</div>
+      <div class="contact-actions">
+        <a id="callDan" href="#" onclick="return noPhone(event)">Call Dan</a>
+        <a id="textDan" class="secondary" href="#" onclick="return noPhone(event)">Text Dan</a>
+      </div>
+      <div id="phoneNote" class="location">Add Dan's phone number in the site settings to activate these buttons.</div>
+    </section>
+
+    <footer>
+      This guide is for crop-management reference only. The Foliar Index is calculated by adding air temperature in °F and relative humidity in %. Always follow product labels and consider crop condition, wind, precipitation, temperature inversions, and local field conditions.
+    </footer>
+    <div class="credit">Roots &amp; Yield Co. • Foliar Spray Guide</div>
+  </main>
+
+<script>
+/* ============================================================
+   ROOTS & YIELD CO. — QUICK SETTINGS
+   Add Dan's phone number below, digits only, including area code.
+   Example: const DAN_PHONE = "9205551234";
+   ============================================================ */
+const DAN_PHONE = "";
+
+if (DAN_PHONE) {
+  document.getElementById("callDan").href = `tel:+1${DAN_PHONE}`;
+  document.getElementById("textDan").href = `sms:+1${DAN_PHONE}`;
+  document.getElementById("callDan").removeAttribute("onclick");
+  document.getElementById("textDan").removeAttribute("onclick");
+  document.getElementById("phoneNote").style.display = "none";
+}
+function noPhone(e) {
+  e.preventDefault();
+  document.getElementById("phoneNote").textContent = "Dan's phone number still needs to be added to this site.";
+  return false;
+}
+
+const $ = id => document.getElementById(id);
+const checkBtn = $("check");
+const zipInput = $("zip");
+
+zipInput.addEventListener("keydown", e => {
+  if (e.key === "Enter") checkConditions();
+});
+checkBtn.addEventListener("click", checkConditions);
+
+function showError(msg){
+  $("error").textContent = msg;
+  $("error").style.display = "block";
+}
+function clearError(){ $("error").style.display = "none"; }
+
+function conditionLabel(index, wind, rain){
+  if (rain >= 50) return ["Poor — rain risk", "poor"];
+  if (wind > 15) return ["Poor — wind is high", "poor"];
+  if (index <= 130 && wind <= 10 && rain < 30) return ["Favorable", "good"];
+  if (index <= 150 && wind <= 12 && rain < 40) return ["Use caution", "watch"];
+  return ["Less favorable", "poor"];
+}
+
+async function checkConditions(){
+  const zip = zipInput.value.trim();
+  if (!/^\d{5}$/.test(zip)) {
+    showError("Please enter a valid 5-digit U.S. ZIP code.");
+    return;
+  }
+  clearError();
+  checkBtn.disabled = true;
+  checkBtn.textContent = "Checking…";
+
+  try {
+    // ZIP → latitude/longitude. Zippopotam provides free U.S. postal-code lookup.
+    const geoRes = await fetch(`https://api.zippopotam.us/us/${zip}`);
+    if (!geoRes.ok) throw new Error("ZIP code not found.");
+    const geo = await geoRes.json();
+    const place = geo.places[0];
+    const lat = Number(place.latitude), lon = Number(place.longitude);
+    $("location").textContent = `${place["place name"]}, ${place["state abbreviation"]} • ZIP ${zip}`;
+
+    // Current + hourly forecast from Open-Meteo. No API key required.
+    const params = new URLSearchParams({
+      latitude: lat,
+      longitude: lon,
+      current: "temperature_2m,relative_humidity_2m,wind_speed_10m,precipitation_probability",
+      hourly: "temperature_2m,relative_humidity_2m,wind_speed_10m,precipitation_probability",
+      temperature_unit: "fahrenheit",
+      wind_speed_unit: "mph",
+      precipitation_unit: "inch",
+      timezone: "auto",
+      forecast_days: "3"
+    });
+    const wxRes = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+    if (!wxRes.ok) throw new Error("Weather service is temporarily unavailable.");
+    const wx = await wxRes.json();
+
+    const c = wx.current;
+    const temp = Math.round(c.temperature_2m);
+    const hum = Math.round(c.relative_humidity_2m);
+    const wind = Math.round(c.wind_speed_10m);
+    const rain = Math.round(c.precipitation_probability ?? 0);
+    const idx = temp + hum;
+
+    $("temp").textContent = `${temp}°F`;
+    $("humidity").textContent = `${hum}%`;
+    $("wind").textContent = `${wind} mph`;
+    $("rain").textContent = `${rain}%`;
+    $("index").textContent = idx;
+
+    const [label, cls] = conditionLabel(idx, wind, rain);
+    $("status").textContent = label;
+    $("status").style.background =
+      cls === "good" ? "rgba(186,232,192,.22)" :
+      cls === "watch" ? "rgba(244,211,126,.23)" :
+      "rgba(244,170,157,.22)";
+
+    renderNextWindow(wx.hourly);
+    renderNextRain(wx.hourly);
+  } catch(err) {
+    showError(err.message || "Unable to load conditions right now.");
+  } finally {
+    checkBtn.disabled = false;
+    checkBtn.textContent = "Check Conditions";
+  }
+}
+
+function renderNextWindow(h){
+  const now = Date.now();
+  let start = null, end = null;
+  for (let i=0; i<h.time.length; i++){
+    const t = new Date(h.time[i]).getTime();
+    if (t < now - 30*60*1000) continue;
+    const temp = h.temperature_2m[i];
+    const hum = h.relative_humidity_2m[i];
+    const wind = h.wind_speed_10m[i];
+    const rain = h.precipitation_probability[i] ?? 0;
+    const index = temp + hum;
+    const favorable = index <= 135 && wind <= 10 && rain < 30;
+
+    if (favorable && start === null) start = i;
+    if (start !== null && (!favorable || i === h.time.length-1)) {
+      end = favorable && i === h.time.length-1 ? i : i-1;
+      if (end - start + 1 >= 2) break; // at least ~2 hours
+      start = null; end = null;
+    }
+  }
+  if (start === null || end === null) {
+    $("foliarWindow").innerHTML = "No strong multi-hour window was found in the next 3 days using this guide's weather thresholds. Recheck later and always use field conditions and the product label.";
+    return;
+  }
+  const a = new Date(h.time[start]);
+  const b = new Date(h.time[end]);
+  const optsDay = {weekday:"short", month:"short", day:"numeric"};
+  const optsTime = {hour:"numeric", minute:"2-digit"};
+  const avgIndex = Math.round((h.temperature_2m[start] + h.relative_humidity_2m[start] + h.temperature_2m[end] + h.relative_humidity_2m[end]) / 2);
+  $("foliarWindow").innerHTML =
+    `<strong>${a.toLocaleDateString([],optsDay)}</strong>, ${a.toLocaleTimeString([],optsTime)} – ${b.toLocaleTimeString([],optsTime)}<br>` +
+    `Forecast favors lower index, lighter wind, and lower rain probability. Approx. Foliar Index near ${avgIndex} at the edges of this window.`;
+}
+
+function renderNextRain(h){
+  const now = Date.now();
+  let found = -1;
+  for (let i=0;i<h.time.length;i++){
+    if (new Date(h.time[i]).getTime() < now) continue;
+    if ((h.precipitation_probability[i] ?? 0) >= 40) { found = i; break; }
+  }
+  if (found < 0){
+    $("nextRain").textContent = "No 40%+ hourly rain chance is showing in the next 3 days.";
+    return;
+  }
+  const d = new Date(h.time[found]);
+  const p = Math.round(h.precipitation_probability[found]);
+  $("nextRain").innerHTML =
+    `<strong>${p}% chance</strong> around ${d.toLocaleDateString([],{weekday:"short",month:"short",day:"numeric"})} at ${d.toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})}.`;
+}
+</script>
+</body>
+</html>
