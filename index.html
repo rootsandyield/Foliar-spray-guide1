@@ -211,6 +211,7 @@
       <div class="contact-actions">
         <a id="callDan" href="#" onclick="return noPhone(event)">Call Dan</a>
         <a id="textDan" class="secondary" href="#" onclick="return noPhone(event)">Text Dan</a>
+      <a href="#" onclick="shareGuide(event)">Share This Guide</a>
       </div>
       <div id="phoneNote" class="location">Add Dan's phone number in the site settings to activate these buttons.</div>
     </section>
@@ -240,8 +241,25 @@ function noPhone(e) {
   e.preventDefault();
   document.getElementById("phoneNote").textContent = "Dan's phone number still needs to be added to this site.";
   return false;
-}
 
+
+}
+async function shareGuide(e) {
+  e.preventDefault();
+
+  const shareData = {
+    title: "Roots & Yield Co. Foliar Spray Guide",
+    text: "Check out the Roots & Yield Co. Foliar Spray Guide.",
+    url: "https://rootsandyield.github.io/Foliar-spray-guide1/"
+  };
+
+  if (navigator.share) {
+    await navigator.share(shareData);
+  } else {
+    await navigator.clipboard.writeText(shareData.url);
+    alert("Foliar Spray Guide link copied!");
+  }
+}
 const $ = id => document.getElementById(id);
 const checkBtn = $("check");
 const zipInput = $("zip");
